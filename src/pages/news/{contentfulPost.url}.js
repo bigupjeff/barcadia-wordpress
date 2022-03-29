@@ -16,28 +16,43 @@ const Post = ({ data: { contentfulPost } }) => {
 }
 
 export const data = graphql`
-  query postQuery($id: String) {
-    contentfulPost(id: { eq: $id }) {
-      title
-      introduction
-      content {
-        raw
-        references {
-          ... on ContentfulAsset {
-            contentful_id
-            gatsbyImageData(
-              width: 800
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
-            description
-            __typename
-          }
+    query postQuery($id: String) {
+        contentfulPost(id: { eq: $id }) {
+        title
+        introduction
+        content {
+            raw
         }
-      }
-      createdAt(formatString: "DD MMMM, YYYY")
+        createdAt(formatString: "DD MMMM, YYYY")
+        }
     }
-  }
-`
-
+    `
 export default Post
+
+
+/*
+
+query postQuery($id: String) {
+    contentfulPost(id: { eq: $id }) {
+        title
+        introduction
+        content {
+            raw
+            references {
+                ... on ContentfulAsset {
+                    contentful_id
+                    gatsbyImageData(
+                    width: 800
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                    )
+                    description
+                    __typename
+                }
+            }
+        }
+        createdAt(formatString: "DD MMMM, YYYY")
+    }
+}
+
+  */
