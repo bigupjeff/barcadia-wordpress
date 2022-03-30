@@ -49,6 +49,18 @@ Search for, install and activate these on the WP plugin page:
  - WP Gatsby
 
 
+### Page Creation
+
+Files in pages/* that are named {something}.js are "collection route components" for Gatsby File System Route API. Gatsby automatically infers a page/post schema using data from WP (or other sources), and creates a query from the filepath/name to build pages from that schema.
+
+These components are automatically passed two dynamic variables, the id and URL of each page node. These can be accessed from within the component as
+ - props.params (URL)
+ - props.pageContext.id (ID)
+
+Both are also passed as variables to the component’s GraphQL query, so you can query fields from the node.
+
+This means you don't need to worry about querying all posts/pages before passing to a page template.
+
 
 ##### Props to the OG dev here:
 

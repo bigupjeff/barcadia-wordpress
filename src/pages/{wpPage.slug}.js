@@ -6,7 +6,7 @@ import FeedTemplate from "../templates/wp-feed-template"
 const getTemplate = (wpPage) => {
 	const templateName = wpPage.template.templateName
 
-	console.log('<<<<< jeff debug Oracle >>>>>')
+	console.log('<<<<< jeff debug wpPage.slug.js >>>>>')
 	console.log(wpPage)
 
 	switch (templateName) {
@@ -73,26 +73,6 @@ query MyQuery {
           }
         }
         id
-      }
-    }
-  }
-}
-
-query wpPageQuery($id: String) {
-  wpPage(id: {eq: $id}) {
-    template {
-      templateName
-    }
-    title
-    content
-    featuredImage {
-      node {
-        altText
-        localFile {
-          childImageSharp {
-            gatsbyImageData(width: 2000, formats: [AUTO, WEBP, AVIF], placeholder: BLURRED)
-          }
-        }
       }
     }
   }
