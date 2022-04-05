@@ -88,6 +88,21 @@ module.exports = {
 			},
 		},
 		{
+			resolve: "@pasdo501/gatsby-source-woocommerce",
+			options: {
+				// Base URL of WordPress site
+				api: process.env.DOMAIN,
+				// true if using https. false otherwise.
+				https: true,
+				api_keys: {
+					consumer_key: process.env.WOO_KEY,
+					consumer_secret: process.env.WOO_SECRET,
+				},
+				// Array of strings with fields you'd like to create nodes for...
+				fields: ['products'],
+			}
+		},
+		{
 			resolve: "gatsby-plugin-robots-txt",
 			options: {
 				host: "https://barcadia.netlify.com",
