@@ -81,6 +81,10 @@ module.exports = {
 					  showQueryOnError: true,
 					},
 				},
+				// Default 15 - too many concurrent requests may cause media download failures.
+				schema: {
+					requestConcurrency: 5,
+				},
 			},
 		},
 		{
