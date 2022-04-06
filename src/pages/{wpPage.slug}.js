@@ -5,10 +5,6 @@ import FeedTemplate from "../templates/wp-feed-template"
 
 const getTemplate = (wpPage) => {
 	const templateName = wpPage.template.templateName
-
-	console.log('<<<<< jeff debug wpPage.slug.js >>>>>')
-	console.log(wpPage)
-
 	switch (templateName) {
 
 		case "Feed":
@@ -49,34 +45,3 @@ export const data = graphql`
 `
 
 export default Page
-
-
-
-/*
-http://localhost:8000/___graphql
-
-
-query MyQuery {
-  allWpPage {
-    edges {
-      node {
-        title
-        slug
-        content
-        featuredImage {
-          node {
-            localFile {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
-        }
-        id
-      }
-    }
-  }
-}
-
-
-*/

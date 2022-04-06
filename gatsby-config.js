@@ -100,6 +100,8 @@ module.exports = {
 				},
 				// Array of strings with fields you'd like to create nodes for...
 				fields: ['products'],
+				// OPTIONAL: How many results to retrieve *per request*
+				per_page: 100,
 			}
 		},
 		{

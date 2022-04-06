@@ -3,11 +3,11 @@ import * as React from "react"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import SimpleBanner from "../components/SimpleBanner/SimpleBanner"
-import ProductFeed from "../components/Feeds/ProductFeed"
+import ProductFeed from "../components/Feeds/WooProductFeed"
 import PostFeed from "../components/Feeds/WPPostFeed"
 
 const getTemplate = (wpPage) => {
-	const { templateName } = wpPage
+	const { templateName } = wpPage.template.templateName
 	switch (templateName) {
 		case "Products":
 			return <ProductFeed {...wpPage} />
@@ -24,20 +24,11 @@ const getTemplate = (wpPage) => {
  * data object, then using it in our markup.
  *
  */
-const FeedTemplate = (...wpPage) => {
 
-/* breaks as sometimes featuredImage is undefined:
-const featuredImage = getImage(wpPage.featuredImage.node.localFile.childImageSharp)
-*/
-
-
-const { title, content, featuredImage, altText } = wpPage
-
-const headerImage = (featuredImage) ? getImage(featuredImage) : null
-
-console.log('<<<<< jeff debug >>>>>')
-console.log(headerImage)
-
+const FeedTemplate = (wpPage) => {
+const { title, content, featuredImage } = wpPage
+const headerImage = (featuredImage) ? getImage(featuredImage.node.localFile.childImageSharp.gatsbyImageData) : null
+const altText = (featuredImage) ? featuredImage.node.altText : null
 	return (
 		<>
 			<Seo title={title} />
