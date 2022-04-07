@@ -41,32 +41,32 @@ const ProductTemplateStyles = styled.div`
 `
 
 const ProductGallery = styled.section`
-  width: 100%;
+	width: 100%;
 
-  > .container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: calc(var(--gap) / 2);
+	> .container {
+		display: flex;
+		flex-wrap: wrap;
+		gap: calc(var(--gap) / 2);
 
-    @media (min-width: 1024px) {
-      gap: var(--gap);
-    }
+		@media (min-width: 1024px) {
+			gap: var(--gap);
+		}
 
-    > * {
-      width: calc(50% - 10px);
+		> * {
+			width: calc(50% - 10px);
 
-      @media (min-width: 768px) {
-        width: calc(33.333% - 14px);
-      }
+			@media (min-width: 768px) {
+				width: calc(33.333% - 14px);
+			}
 
-      @media (min-width: 1024px) {
-        width: calc(25% - 30px);
-      }
-    }wpPage.template.templateName
-  }
+			@media (min-width: 1024px) {
+				width: calc(25% - 30px);
+			}
+		}
+	}
 `
 
-const Producttemplate = (wcProducts) => {
+const ProductTemplate = (wcProducts) => {
 	const {
 		headerImage,
 		name,
@@ -77,6 +77,8 @@ const Producttemplate = (wcProducts) => {
 		images,
 	} = wcProducts
 	const productHeaderImage = (headerImage) ? getImage(headerImage[0].localFile.childImageSharp) : null
+	const headerImageAltText = headerImage.alt
+
 	return (
 		<>
 			<Seo title={name} />
@@ -89,7 +91,7 @@ const Producttemplate = (wcProducts) => {
 				<GatsbyImage
 					className="banner__image"
 					image={productHeaderImage}
-					alt={name}
+					alt={headerImageAltText || name}
 				/>
 			</BannerModule>
 			<ProductTemplateStyles className="section">
@@ -104,11 +106,11 @@ const Producttemplate = (wcProducts) => {
 					<div className="column">
 					{attributes.map((item, index) => {
 						return (
-						<Faq
-							key={index}
-							title={item.name}
-							description={item.options}
-						/>
+							<Faq
+								key={index}
+								title={item.name}
+								description={item.options}
+							/>
 						)
 					})}
 					</div>
@@ -119,8 +121,15 @@ const Producttemplate = (wcProducts) => {
 				<ProductGallery className="section">
 				<div className="container container__tight">
 					{images.map((item, index) => {
-					let galleryImage = getImage(item.localFile.childImageSharp)
-					return <GatsbyImage key={index} image={galleryImage} />
+						let galleryImage = getImage(item.localFile.childImageSharp)
+						let galleryAltText = item.alt
+						return(
+							<GatsbyImage
+								key={index}
+								image={galleryImage}
+								alt={galleryAltText}
+							/>
+						)
 					})}
 				</div>
 				</ProductGallery>
@@ -133,4 +142,4 @@ const Producttemplate = (wcProducts) => {
 	)
 }
 
-export default Producttemplate
+export default ProductTemplate

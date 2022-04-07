@@ -5,8 +5,7 @@ import BannerModule from "../components/BannerModule/BannerModule"
 import BasicTextModule from "../components/BasicTextModule/BasicTextModule"
 import PerksModule from "../components/PerksModule/PerksModule"
 import Perk from "../components/PerksModule/Perk"
-import Features from "../components/Features/Features"
-import LatestPosts from "../components/Post/LatestPosts"
+import WooFeatures from "../components/Features/WooFeatures"
 import WPLatestPosts from "../components/Post/WPLatestPosts"
 
 const Index = () => {
@@ -16,8 +15,8 @@ const Index = () => {
 			<Layout>
 				<BannerModule
 					title="Welcome to Barcadia (WordPress)"
-					subTitle="This is a modification of the original Barcadia theme adapted to use WordPress
-						as the primary source."
+					subTitle="This is a modification of the original Barcadia theme adapted to use
+						WordPress and WooCommerce as the headless sources."
 				/>
 				<BasicTextModule
 					title="A super-fast theme that is easy to get started, using the power of
@@ -34,13 +33,9 @@ const Index = () => {
 					content="The content"
 				/>
 				</PerksModule>
-				<Features
+				<WooFeatures
 					title="Featured Products from Barcadia."
 					introduction="Vivamus quam mauris, pulvinar vel mauris id, interdum semper neque. Proin malesuada libero eget tellus scelerisque, id egestas tortor egestas."
-				/>
-				<LatestPosts
-					title="The Latest from Barcadia"
-					introduction="Cras scelerisque, tellus sed gravida tincidunt, velit tellus blandit justo, nec viverra augue erat in erat. Maecenas iaculis sed purus non fringilla."
 				/>
 				<WPLatestPosts
 					title="The Latest from WordPress"

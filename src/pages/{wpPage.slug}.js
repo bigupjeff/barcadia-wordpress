@@ -3,10 +3,9 @@ import { graphql } from "gatsby"
 import DefaultTemplate from "../templates/wp-default-template"
 import FeedTemplate from "../templates/wp-feed-template"
 
-const getTemplate = (wpPage) => {
+const getPageTemplate = (wpPage) => {
 	const templateName = wpPage.template.templateName
 	switch (templateName) {
-
 		case "Feed":
 			return <FeedTemplate {...wpPage} />
 
@@ -16,7 +15,7 @@ const getTemplate = (wpPage) => {
 }
 
 const Page = ({ data: { wpPage } }) => {
-  	return <main>{getTemplate(wpPage)}</main>
+  	return <main>{getPageTemplate(wpPage)}</main>
 }
 
 export const data = graphql`
@@ -27,13 +26,14 @@ export const data = graphql`
 			}
 			title
 			content
+			slug
 			featuredImage {
 				node {
 					altText
 					localFile {
 						childImageSharp {
 							gatsbyImageData(
-								width: 2000,
+								layout: FULL_WIDTH,
 								formats: [AUTO, WEBP, AVIF],
 								placeholder: BLURRED)
 						}

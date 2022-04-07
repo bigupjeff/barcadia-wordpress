@@ -1,18 +1,18 @@
 import { graphql, useStaticQuery } from "gatsby"
 
-const useAllWooProduct = () => {
-  const {
-    allWcProducts: { nodes },
+const useFeaturedProduct = () => {
+	const {
+		allWcProducts: { nodes },
 	} = useStaticQuery(graphql`
-		query allWooProductLinksQuery {
-			allWcProducts(sort: {fields: date_created, order: DESC}) {
+		query featuredWooProductsQuery {
+			allWcProducts(
+				sort: {fields: date_created, order: DESC}
+				filter: {categories: {elemMatch: {name: {eq: "Featured"}}}}
+			) {
 				nodes {
 					name
 					slug
 					short_description
-					sku
-					price
-					description
 					headerImage: images {
 						alt
 						localFile {
@@ -29,8 +29,7 @@ const useAllWooProduct = () => {
 			}
 		}
 	`)
-
-  return nodes
+  	return nodes
 }
 
-export default useAllWooProduct
+export default useFeaturedProduct

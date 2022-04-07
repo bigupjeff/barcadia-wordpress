@@ -3,17 +3,17 @@ import * as React from "react"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import SimpleBanner from "../components/SimpleBanner/SimpleBanner"
-import ProductFeed from "../components/Feeds/WooProductFeed"
-import PostFeed from "../components/Feeds/WPPostFeed"
+import WooProductFeed from "../components/Feeds/WooProductFeed"
+import WPPostFeed from "../components/Feeds/WPPostFeed"
 
-const getTemplate = (wpPage) => {
-	const { templateName } = wpPage.template.templateName
+const getFeedTemplate = (wpPage) => {
+	const templateName = (wpPage.slug.includes(`products`)) ? 'products' : ''
 	switch (templateName) {
-		case "Products":
-			return <ProductFeed {...wpPage} />
+		case "products":
+			return <WooProductFeed {...wpPage} />
 
 		default:
-			return <PostFeed {...wpPage} />
+			return <WPPostFeed {...wpPage} />
 	}
 }
 
@@ -26,9 +26,9 @@ const getTemplate = (wpPage) => {
  */
 
 const FeedTemplate = (wpPage) => {
-const { title, content, featuredImage } = wpPage
-const headerImage = (featuredImage) ? getImage(featuredImage.node.localFile.childImageSharp.gatsbyImageData) : null
-const altText = (featuredImage) ? featuredImage.node.altText : null
+	const { title, content, featuredImage } = wpPage
+	const headerImage = (featuredImage) ? getImage(featuredImage.node.localFile.childImageSharp.gatsbyImageData) : null
+	const altText = (featuredImage) ? featuredImage.node.altText : null
 	return (
 		<>
 			<Seo title={title} />
@@ -47,10 +47,10 @@ const altText = (featuredImage) ? featuredImage.node.altText : null
 				</SimpleBanner>
 				<div className="section">
 					<div className="feed">
-						{getTemplate(wpPage)}
+						{getFeedTemplate(wpPage)}
 					</div>
 				</div>
-			</Layout>
+			</Layout>getTemplate
 		</>
 	)
 }

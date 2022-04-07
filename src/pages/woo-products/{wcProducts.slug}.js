@@ -32,16 +32,26 @@ export const data = graphql`
 			short_description
 			description
 			headerImage: images {
+				alt
 				localFile {
 					childImageSharp {
-						gatsbyImageData(width: 2000)
+						gatsbyImageData(
+							layout: FULL_WIDTH,
+							placeholder: BLURRED,
+							formats: [AUTO, WEBP, AVIF]
+						)
 					}
 				}
 			}
 			images {
+				alt
 				localFile {
 					childImageSharp {
-						gatsbyImageData(width: 1000)
+						gatsbyImageData(
+							width: 1000,
+							placeholder: BLURRED,
+							formats: [AUTO, WEBP, AVIF]
+						)
 					}
 				}
 			}

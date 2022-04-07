@@ -20,23 +20,23 @@ const Page = ({ data: { contentfulPage } }) => {
 }
 
 export const data = graphql`
-  query pageQuery($id: String) {
-    contentfulPage(id: { eq: $id }) {
-      template
-      title
-      headerImage {
-        gatsbyImageData(
-          width: 2000
-          placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
-        )
-      }
-      feedType
-      mainContent {
-        raw
-      }
-    }
-  }
+	query pageQuery($id: String) {
+		contentfulPage(id: { eq: $id }) {
+			template
+			title
+			headerImage {
+				gatsbyImageData(
+					layout: FULL_WIDTH
+				placeholder: BLURRED
+				formats: [AUTO, WEBP, AVIF]
+				)
+			}
+			feedType
+			mainContent {
+				raw
+			}
+		}
+	}
 `
 
 export default Page

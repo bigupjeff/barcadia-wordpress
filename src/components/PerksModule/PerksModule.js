@@ -32,10 +32,11 @@ const PerksModule = () => {
         </span>
         <Perk
           title="Built For Content"
-          content="Contentful helps you edit your application with ease as your business expands"
+          content="The power and familiarity of WordPress, coupled with the product management of
+		  	WooCommerce"
         >
           <StaticImage
-            src="../../../static/logos/contentful-logo.svg"
+            src="../../../static/logos/woo-press-logo.svg"
             alt="Perk Image"
             layout="constrained"
             placeholder="tracedSVG"

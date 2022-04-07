@@ -5,12 +5,20 @@ import PostItem from "./WPPostItem"
 import useLatestBlogPost from "../../hooks/wp-use-latest-blog-post"
 import Button from "../Button/Button"
 
-const LatestPosts = ({ title, excerpt }) => {
+/**
+ * LatestPosts Section
+ * 
+ * @param {string} title (passed in context)
+ * @param {string} introduction (passed in context)
+ * @returns Latest posts section component.
+ * 
+ */
+const LatestPosts = ({ title, introduction }) => {
   const latestBlogPost = useLatestBlogPost()
   return (
     <div className="section">
       <div className="container container__tight">
-        {title || excerpt ? (
+        {title || introduction ? (
           <div className="intro__area">
             {title && (
               <h2>
@@ -18,7 +26,7 @@ const LatestPosts = ({ title, excerpt }) => {
                 <span>.</span>
               </h2>
             )}
-            {excerpt && <p dangerouslySetInnerHTML={{ __html: excerpt }} />}
+            {introduction && <p>{introduction}</p>}
           </div>
         ) : null}
 

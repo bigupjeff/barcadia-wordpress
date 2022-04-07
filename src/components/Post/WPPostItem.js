@@ -1,18 +1,35 @@
 import * as React from "react"
 import Button from "../Button/Button"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { PostItemStyles } from "./PostStyles"
 
 const BlogItem = ({ node }, key) => {
-	const { title, slug, excerpt, date } = node
+	const { title, slug, excerpt, date, featuredImage } = node
 	const uri = `/blog/` + slug
+	const image = (featuredImage) ? getImage(featuredImage.node.localFile.childImageSharp) : null
+	const altText = (featuredImage) ? featuredImage.node.altText : ''
 	return (
 		<PostItemStyles key={key} to={uri}>
-			<h4>{title}</h4>
-			{excerpt && <p dangerouslySetInnerHTML={{ __html: excerpt }} />}
-			<div className="blogitem__meta">
-				<Button as="span" text="Read More" arrow={true} />
-				<p>{date}</p>
+			{featuredImage &&
+				<GatsbyImage
+					className="blogitem__img"
+					image={image}
+					alt={altText || title}
+				/>
+			}
+			<div className="blogitem__content">
+				<h4>{title}</h4>
+				{excerpt &&
+					<div
+						dangerouslySetInnerHTML={{ __html: excerpt }}
+					/>
+				}
+				<div className="blogitem__meta">
+					<Button as="span" text="Read More" arrow={true} />
+					<p>{date}</p>
+				</div>
 			</div>
+
 		</PostItemStyles>
 	)
 }
