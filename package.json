@@ -7,7 +7,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format": "prettier --write \"src/**/*.{js,json}\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -47,5 +47,8 @@
   },
   "bugs": {
     "url": "https://github.com/bagseye/barcadia/issues"
+  },
+  "devDependencies": {
+    "prettier": "2.6.2"
   }
 }

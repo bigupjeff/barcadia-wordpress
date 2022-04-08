@@ -5,14 +5,14 @@ import Seo from "../../components/SEO"
 import Layout from "../../components/Layout"
 
 const Product = ({ data: { wcProducts } }) => {
-  return (
-    <>
-      <Seo title={wcProducts.name} />
-      <Layout>
-        <ProductTemplate {...wcProducts} />
-      </Layout>
-    </>
-  )
+	return (
+		<>
+			<Seo title={wcProducts.name} />
+			<Layout>
+				<ProductTemplate {...wcProducts} />
+			</Layout>
+		</>
+	)
 }
 
 /*
@@ -26,7 +26,7 @@ https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#createResolver
 
 export const data = graphql`
 	query wooProductQuery($id: String) {
-		wcProducts(id: {eq: $id}) {
+		wcProducts(id: { eq: $id }) {
 			name
 			price
 			short_description
@@ -36,8 +36,8 @@ export const data = graphql`
 				localFile {
 					childImageSharp {
 						gatsbyImageData(
-							layout: FULL_WIDTH,
-							placeholder: BLURRED,
+							layout: FULL_WIDTH
+							placeholder: BLURRED
 							formats: [AUTO, WEBP, AVIF]
 						)
 					}
@@ -48,8 +48,8 @@ export const data = graphql`
 				localFile {
 					childImageSharp {
 						gatsbyImageData(
-							width: 1000,
-							placeholder: BLURRED,
+							width: 1000
+							placeholder: BLURRED
 							formats: [AUTO, WEBP, AVIF]
 						)
 					}

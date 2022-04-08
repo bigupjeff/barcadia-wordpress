@@ -1,13 +1,13 @@
 import React from "react"
-import PostItem from "../Post/PostItem"
+import WpPostItem from "../Post/WpPostItem"
 import useAllPost from "../../hooks/use-all-blog-post"
 
 const ProductFeed = () => {
-  const allPost = useAllPost()
+	const allPost = useAllPost()
 
-  return allPost.map((node, index) => {
-    return <PostItem key={index} node={node} />
-  })
+	return allPost.map((node, index) => {
+		return <WpPostItem key={index} node={node} />
+	})
 }
 
 export default ProductFeed

@@ -5,7 +5,7 @@ const useAllBlogPost = () => {
 		allWpPost: { nodes },
 	} = useStaticQuery(graphql`
 		query wpAllBlogLinksQuery {
-			allWpPost(sort: {fields: date, order: DESC}) {
+			allWpPost(sort: { fields: date, order: DESC }) {
 				nodes {
 					title
 					slug
@@ -18,8 +18,8 @@ const useAllBlogPost = () => {
 							localFile {
 								childImageSharp {
 									gatsbyImageData(
-										width: 1000,
-										placeholder: BLURRED,
+										width: 1000
+										placeholder: BLURRED
 										formats: [AUTO, WEBP, AVIF]
 									)
 								}
@@ -30,6 +30,6 @@ const useAllBlogPost = () => {
 			}
 		}
 	`)
-  	return nodes
+	return nodes
 }
 export default useAllBlogPost

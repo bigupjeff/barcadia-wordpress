@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Button from "../components/Button/Button"
 import { PostSingleStyles } from "../components/Post/PostStyles"
-import LatestPosts from "../components/Post/WPLatestPosts"
+import WpLatestPosts from "../components/Post/WpLatestPosts"
 
 const PostTemplate = (wordpressPost) => {
 	const { title, date, content } = wordpressPost
@@ -16,16 +16,22 @@ const PostTemplate = (wordpressPost) => {
 					)}
 					{content && (
 						<article className="blogsingle__content">
-							<div dangerouslySetInnerHTML={{ __html: content }} />
+							<div
+								dangerouslySetInnerHTML={{ __html: content }}
+							/>
 
 							<div className="blogsingle__back">
-								<Button to="/blog" text="Back to Blog" as={Link} />
+								<Button
+									to="/blog"
+									text="Back to Blog"
+									as={Link}
+								/>
 							</div>
 						</article>
 					)}
 				</PostSingleStyles>
 			</section>
-			<LatestPosts title="Further reading from WordPress" />
+			<WpLatestPosts title="Further reading from WordPress" />
 		</>
 	)
 }

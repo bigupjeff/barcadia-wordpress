@@ -7,37 +7,37 @@ import Faq from "../components/Faq/WooFaq"
 import Features from "../components/Features/WooFeatures"
 
 const ProductTemplateStyles = styled.div`
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    .column {
-      flex: 0 0 100%;
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		.column {
+			flex: 0 0 100%;
 
-      @media (min-width: 768px) {
-        flex-basis: 50%;
+			@media (min-width: 768px) {
+				flex-basis: 50%;
 
-        &:nth-child(1) {
-          padding-right: 20px;
-        }
+				&:nth-child(1) {
+					padding-right: 20px;
+				}
 
-        &:nth-child(2) {
-          padding-left: 20px;
-        }
+				&:nth-child(2) {
+					padding-left: 20px;
+				}
 
-        > * {
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-      }
+				> * {
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
 
-      > * {
-        &:first-child {
-          margin-top: 0;
-        }
-      }
-    }
-  }
+			> * {
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+		}
+	}
 `
 
 const ProductGallery = styled.section`
@@ -76,7 +76,9 @@ const ProductTemplate = (wcProducts) => {
 		attributes,
 		images,
 	} = wcProducts
-	const productHeaderImage = (headerImage) ? getImage(headerImage[0].localFile.childImageSharp) : null
+	const productHeaderImage = headerImage
+		? getImage(headerImage[0].localFile.childImageSharp)
+		: null
 	const headerImageAltText = headerImage.alt
 
 	return (
@@ -96,42 +98,44 @@ const ProductTemplate = (wcProducts) => {
 			</BannerModule>
 			<ProductTemplateStyles className="section">
 				<div className="container container__tight">
-				{description && (
-					<div
-						className="column"
-						dangerouslySetInnerHTML={{ __html: description }}
-					/>
-				)}
-				{attributes && (
-					<div className="column">
-					{attributes.map((item, index) => {
-						return (
-							<Faq
-								key={index}
-								title={item.name}
-								description={item.options}
-							/>
-						)
-					})}
-					</div>
-				)}
+					{description && (
+						<div
+							className="column"
+							dangerouslySetInnerHTML={{ __html: description }}
+						/>
+					)}
+					{attributes && (
+						<div className="column">
+							{attributes.map((item, index) => {
+								return (
+									<Faq
+										key={index}
+										title={item.name}
+										description={item.options}
+									/>
+								)
+							})}
+						</div>
+					)}
 				</div>
 			</ProductTemplateStyles>
 			{images && (
 				<ProductGallery className="section">
-				<div className="container container__tight">
-					{images.map((item, index) => {
-						let galleryImage = getImage(item.localFile.childImageSharp)
-						let galleryAltText = item.alt
-						return(
-							<GatsbyImage
-								key={index}
-								image={galleryImage}
-								alt={galleryAltText}
-							/>
-						)
-					})}
-				</div>
+					<div className="container container__tight">
+						{images.map((item, index) => {
+							let galleryImage = getImage(
+								item.localFile.childImageSharp
+							)
+							let galleryAltText = item.alt
+							return (
+								<GatsbyImage
+									key={index}
+									image={galleryImage}
+									alt={galleryAltText}
+								/>
+							)
+						})}
+					</div>
 				</ProductGallery>
 			)}
 			<Features

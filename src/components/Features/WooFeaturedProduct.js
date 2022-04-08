@@ -7,8 +7,10 @@ import { FeaturedProductStyles } from "./FeaturesStyles"
 const FeaturedProduct = ({ feature }) => {
 	const { slug, headerImage, name, short_description } = feature
 	const gatsbyPath = `/products/` + slug
-	const image = (headerImage) ? getImage(headerImage[0].localFile.childImageSharp) : null
-	const altText = (headerImage) ? headerImage[0].alt : ''
+	const image = headerImage
+		? getImage(headerImage[0].localFile.childImageSharp)
+		: null
+	const altText = headerImage ? headerImage[0].alt : ""
 	return (
 		<FeaturedProductStyles>
 			<Link to={gatsbyPath}>
@@ -20,11 +22,13 @@ const FeaturedProduct = ({ feature }) => {
 				{name && short_description && (
 					<div className="features__item--content">
 						{name && <h4>{name}</h4>}
-						{short_description &&
+						{short_description && (
 							<div
-								dangerouslySetInnerHTML={{ __html: short_description }}
+								dangerouslySetInnerHTML={{
+									__html: short_description,
+								}}
 							/>
-						}
+						)}
 						<Button text="Read More" as="span" arrow={true} />
 					</div>
 				)}

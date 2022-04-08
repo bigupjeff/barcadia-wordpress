@@ -6,8 +6,10 @@ const useFeaturedProduct = () => {
 	} = useStaticQuery(graphql`
 		query featuredWooProductsQuery {
 			allWcProducts(
-				sort: {fields: date_created, order: DESC}
-				filter: {categories: {elemMatch: {name: {eq: "Featured"}}}}
+				sort: { fields: date_created, order: DESC }
+				filter: {
+					categories: { elemMatch: { name: { eq: "Featured" } } }
+				}
 			) {
 				nodes {
 					name
@@ -18,8 +20,8 @@ const useFeaturedProduct = () => {
 						localFile {
 							childImageSharp {
 								gatsbyImageData(
-									width: 1000,
-									placeholder: BLURRED,
+									width: 1000
+									placeholder: BLURRED
 									formats: [AUTO, WEBP, AVIF]
 								)
 							}
@@ -29,7 +31,7 @@ const useFeaturedProduct = () => {
 			}
 		}
 	`)
-  	return nodes
+	return nodes
 }
 
 export default useFeaturedProduct

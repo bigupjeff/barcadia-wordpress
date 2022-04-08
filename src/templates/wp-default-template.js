@@ -4,15 +4,20 @@ import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import SimpleBanner from "../components/SimpleBanner/SimpleBanner"
 
-const DefaultTemplate = wpPage => {
-	const featuredImage = getImage(wpPage.featuredImage.node.localFile.childImageSharp)
+const DefaultTemplate = (wpPage) => {
+	const featuredImage = getImage(
+		wpPage.featuredImage.node.localFile.childImageSharp
+	)
 	const { title, content } = wpPage
 	return (
 		<>
 			<Seo title={title} />
 			<Layout>
 				<SimpleBanner title={title}>
-					<GatsbyImage className="banner__image" image={featuredImage} />
+					<GatsbyImage
+						className="banner__image"
+						image={featuredImage}
+					/>
 				</SimpleBanner>
 				<div className="section">
 					<div

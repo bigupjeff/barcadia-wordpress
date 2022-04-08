@@ -15,12 +15,12 @@ const getPageTemplate = (wpPage) => {
 }
 
 const Page = ({ data: { wpPage } }) => {
-  	return <main>{getPageTemplate(wpPage)}</main>
+	return <main>{getPageTemplate(wpPage)}</main>
 }
 
 export const data = graphql`
 	query wpPageQuery($id: String) {
-		wpPage(id: {eq: $id}) {
+		wpPage(id: { eq: $id }) {
 			template {
 				templateName
 			}
@@ -33,9 +33,10 @@ export const data = graphql`
 					localFile {
 						childImageSharp {
 							gatsbyImageData(
-								layout: FULL_WIDTH,
-								formats: [AUTO, WEBP, AVIF],
-								placeholder: BLURRED)
+								layout: FULL_WIDTH
+								formats: [AUTO, WEBP, AVIF]
+								placeholder: BLURRED
+							)
 						}
 					}
 				}

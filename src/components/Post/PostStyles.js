@@ -2,18 +2,18 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 export const PostItemsStyles = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  gap: calc(var(--gap) / 2);
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	gap: calc(var(--gap) / 2);
 
-  @media (min-width: 1200px) {
-    gap: var(--gap);
-  }
+	@media (min-width: 1200px) {
+		gap: var(--gap);
+	}
 
-  @media (min-width: 1200px) {
-    gap: var(--gap);
-  }
+	@media (min-width: 1200px) {
+		gap: var(--gap);
+	}
 `
 
 export const PostItemStyles = styled(Link)`
@@ -27,13 +27,12 @@ export const PostItemStyles = styled(Link)`
 	text-decoration: none;
 	color: #fff;
 	background: linear-gradient(
-				0deg,
-				rgba(0, 0, 0, 1) 0%,
-				rgba(0, 0, 0, 0) 100%
-				);
-	transition: border-color 0.6s ease,
-				background-color 0.6s ease,
-				box-shadow 0.6s ease;
+		0deg,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	transition: border-color 0.6s ease, background-color 0.6s ease,
+		box-shadow 0.6s ease;
 
 	&:first-child {
 		margin-top: 0;
@@ -71,18 +70,18 @@ export const PostItemStyles = styled(Link)`
 		@media (min-width: 768px) {
 			padding: 20px;
 		}
-	
+
 		@media (min-width: 1024px) {
 			padding: 40px 20px;
 		}
-	
+
 		@media (min-width: 1200px) {
 			padding: 50px 30px;
 		}
 
 		h4,
 		p {
-		  text-shadow: var(--textShadow);
+			text-shadow: var(--textShadow);
 		}
 
 		p {
@@ -136,24 +135,24 @@ export const PostItemStyles = styled(Link)`
 `
 
 export const PostSingleStyles = styled.article`
-  padding: var(--sectionMargin) var(--borderSpacing) 0 var(--borderSpacing);
-  max-width: 750px;
-  margin: 0 auto;
-  box-sizing: content-box;
+	padding: var(--sectionMargin) var(--borderSpacing) 0 var(--borderSpacing);
+	max-width: 750px;
+	margin: 0 auto;
+	box-sizing: content-box;
 
-  .blogsingle {
-    &__title {
-      font-size: var(--h2);
-      font-weight: 700;
-    }
+	.blogsingle {
+		&__title {
+			font-size: var(--h2);
+			font-weight: 700;
+		}
 
-    &__content {
-      border-top: 2px solid var(--primary);
-      padding-top: calc(var(--gap));
-    }
+		&__content {
+			border-top: 2px solid var(--primary);
+			padding-top: calc(var(--gap));
+		}
 
-    &__back {
-      padding-top: var(--gap);
-    }
-  }
+		&__back {
+			padding-top: var(--gap);
+		}
+	}
 `

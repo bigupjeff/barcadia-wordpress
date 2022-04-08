@@ -24,7 +24,10 @@ const Footer = () => {
 						{menuItems.map((item, index) => {
 							return (
 								<li key={index}>
-									<Link to={item.path} activeClassName="menu__item--active">
+									<Link
+										to={item.path}
+										activeClassName="menu__item--active"
+									>
 										{item.text}
 										<span>.</span>
 									</Link>
@@ -58,9 +61,9 @@ const Footer = () => {
 				)}
 
 				{siteMeta.twitterUsername ||
-					siteMeta.facebookUsername ||
-					siteMeta.instagramUsername ||
-					siteMeta.linkedinUsername ? (
+				siteMeta.facebookUsername ||
+				siteMeta.instagramUsername ||
+				siteMeta.linkedinUsername ? (
 					<FooterMenuStyles className="footer__menu social__menu">
 						<h5>
 							Follow Barcadia<span>.</span>

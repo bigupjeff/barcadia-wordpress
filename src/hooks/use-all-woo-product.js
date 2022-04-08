@@ -1,11 +1,11 @@
 import { graphql, useStaticQuery } from "gatsby"
 
 const useAllWooProduct = () => {
-  const {
-    allWcProducts: { nodes },
+	const {
+		allWcProducts: { nodes },
 	} = useStaticQuery(graphql`
 		query allWooProductLinksQuery {
-			allWcProducts(sort: {fields: date_created, order: DESC}) {
+			allWcProducts(sort: { fields: date_created, order: DESC }) {
 				nodes {
 					name
 					slug
@@ -18,8 +18,8 @@ const useAllWooProduct = () => {
 						localFile {
 							childImageSharp {
 								gatsbyImageData(
-									width: 1000,
-									placeholder: BLURRED,
+									width: 1000
+									placeholder: BLURRED
 									formats: [AUTO, WEBP, AVIF]
 								)
 							}
@@ -30,7 +30,7 @@ const useAllWooProduct = () => {
 		}
 	`)
 
-  return nodes
+	return nodes
 }
 
 export default useAllWooProduct

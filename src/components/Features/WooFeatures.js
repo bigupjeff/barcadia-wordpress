@@ -6,21 +6,21 @@ import useFeaturedWooProduct from "../../hooks/use-featured-woo-product"
 import Button from "../Button/Button"
 
 const Features = ({ title, introduction }) => {
-  const featuredProduct = useFeaturedWooProduct()
+	const featuredProduct = useFeaturedWooProduct()
 
-  return (
+	return (
 		<FeaturedProductsStyles className="section">
 			{title || introduction ? (
 				<div className="container container__tight">
-				<div className="intro__area">
-					{title && <h2>{title}</h2>}
-					{introduction && <p>{introduction}</p>}
-				</div>
+					<div className="intro__area">
+						{title && <h2>{title}</h2>}
+						{introduction && <p>{introduction}</p>}
+					</div>
 				</div>
 			) : null}
 			<div className="container container__tight container__scroll">
 				{featuredProduct.map((node, index) => {
-				return <WooFeaturedProduct feature={node} key={index} />
+					return <WooFeaturedProduct feature={node} key={index} />
 				})}
 			</div>
 			<div className="container container__tight learn__more">

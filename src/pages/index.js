@@ -6,7 +6,7 @@ import BasicTextModule from "../components/BasicTextModule/BasicTextModule"
 import PerksModule from "../components/PerksModule/PerksModule"
 import Perk from "../components/PerksModule/Perk"
 import WooFeatures from "../components/Features/WooFeatures"
-import WPLatestPosts from "../components/Post/WPLatestPosts"
+import WpLatestPosts from "../components/Post/WpLatestPosts"
 
 const Index = () => {
 	return (
@@ -28,18 +28,15 @@ const Index = () => {
 					linkText="View Products"
 				/>
 				<PerksModule>
-					<Perk
-						title="The Title"
-						content="The content"
-					/>
+					<Perk title="The Title" content="The content" />
 				</PerksModule>
 				<WooFeatures
 					title="Featured Products."
-					introduction="Here's a selection of sizzling products which appear here because
-						they are assigned to the &quot;Featured&quot; category in
-						WooCommerce&#47;WordPress."
+					introduction='Here&apos;s a selection of sizzling products which appear here because
+						they are assigned to the "Featured" category in
+						WooCommerce&#47;WordPress.'
 				/>
-				<WPLatestPosts
+				<WpLatestPosts
 					title="The Latest Blog Posts"
 					introduction="Here are the latest 3 awesome posts from WordPress."
 				/>
