@@ -4,7 +4,7 @@ import Button from "../components/Button/Button"
 import { PostSingleStyles } from "../components/Post/PostStyles"
 import WpLatestPosts from "../components/Post/WpLatestPosts"
 
-const PostTemplate = (wordpressPost) => {
+const WpPostTemplate = (wordpressPost) => {
 	const { title, date, content } = wordpressPost
 	return (
 		<>
@@ -36,4 +36,4 @@ const PostTemplate = (wordpressPost) => {
 	)
 }
 
-export default PostTemplate
+export default WpPostTemplate

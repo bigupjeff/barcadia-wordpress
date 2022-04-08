@@ -1,15 +1,15 @@
 import React from "react"
 import { graphql } from "gatsby"
-import PostTemplate from "../../templates/wp-post-template"
+import WpPostTemplate from "../../templates/wp-post-template"
 import Seo from "../../components/SEO"
 import Layout from "../../components/Layout"
 
-const Post = ({ data: { wpPost } }) => {
+const WpPost = ({ data: { wpPost } }) => {
 	return (
 		<>
 			<Seo title={wpPost.title} />
 			<Layout>
-				<PostTemplate {...wpPost} />
+				<WpPostTemplate {...wpPost} />
 			</Layout>
 		</>
 	)
@@ -25,4 +25,4 @@ export const data = graphql`
 		}
 	}
 `
-export default Post
+export default WpPost

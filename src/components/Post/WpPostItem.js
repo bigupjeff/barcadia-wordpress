@@ -3,7 +3,7 @@ import Button from "../Button/Button"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { PostItemStyles } from "./PostStyles"
 
-const BlogItem = ({ node }, key) => {
+const WpPostItem = ({ node }, key) => {
 	const { title, slug, excerpt, date, featuredImage } = node
 	const uri = `/blog/` + slug
 	const image = featuredImage
@@ -33,4 +33,4 @@ const BlogItem = ({ node }, key) => {
 	)
 }
 
-export default BlogItem
+export default WpPostItem
