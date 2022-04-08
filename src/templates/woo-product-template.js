@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import BannerModule from "../components/BannerModule/WooBannerModule"
 import Faq from "../components/Faq/WooFaq"
-import Features from "../components/Features/Features"
+import Features from "../components/Features/WooFeatures"
 
 const ProductTemplateStyles = styled.div`
   .container {

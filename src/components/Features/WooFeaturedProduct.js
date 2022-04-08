@@ -6,7 +6,7 @@ import { FeaturedProductStyles } from "./FeaturesStyles"
 
 const FeaturedProduct = ({ feature }) => {
 	const { slug, headerImage, name, short_description } = feature
-	const gatsbyPath = `/woo-products/` + slug
+	const gatsbyPath = `/products/` + slug
 	const image = (headerImage) ? getImage(headerImage[0].localFile.childImageSharp) : null
 	const altText = (headerImage) ? headerImage[0].alt : ''
 	return (

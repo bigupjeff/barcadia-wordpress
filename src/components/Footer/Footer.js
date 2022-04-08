@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { menuItems } from "../../constants/links"
 import { FooterStyles, FooterMenuStyles, CopyrightStyles } from "./FooterStyles"
-import useAllProduct from "../../hooks/use-all-product"
+import useAllProduct from "../../hooks/use-all-woo-product"
 import { UseSiteMetadata } from "../../hooks/useSiteMetadata"
 import {
   FaFacebookSquare as Facebook,
@@ -41,8 +41,8 @@ const Footer = () => {
             </h5>
             <ul>
               {allProduct.map((item, index) => {
-                const { gatsbyPath, title } = item
-
+                const { slug, title } = item
+				const gatsbyPath = `/products/` + slug
                 return (
                   <li key={index}>
                     <Link to={gatsbyPath}>

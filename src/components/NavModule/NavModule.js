@@ -4,7 +4,7 @@ import MenuContext from "../MenuContext"
 import { motion } from "framer-motion"
 import { menuItems } from "./NavConstants"
 import { UseSiteMetadata } from "../../hooks/useSiteMetadata"
-import useFeaturedProduct from "../../hooks/use-featured-product"
+import useFeaturedProduct from "../../hooks/use-featured-woo-product"
 import { FiChevronDown as Chevron } from "react-icons/fi"
 import {
   NavModuleStyles,
@@ -121,7 +121,8 @@ const NavModule = () => {
                 </li>
                 <hr />
                 {featuredProduct.map((item, index) => {
-                  const { gatsbyPath, title } = item
+                  const { slug, name } = item
+				  const gatsbyPath = `/products/` + slug
                   return (
                     <li key={index}>
                       <Link
@@ -129,7 +130,7 @@ const NavModule = () => {
                         onKeyDown={toggleNav}
                         to={gatsbyPath}
                       >
-                        {title}
+                        {name}
                         <span>.</span>
                       </Link>
                     </li>
