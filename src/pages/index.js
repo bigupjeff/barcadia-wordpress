@@ -11,12 +11,12 @@ import WPLatestPosts from "../components/Post/WPLatestPosts"
 const Index = () => {
 	return (
 		<>
-		<Seo title="Home" />
+			<Seo title="Home" />
 			<Layout>
 				<BannerModule
-					title="Welcome to Barcadia (WordPress)"
+					title="Welcome to Barcadia-WP"
 					subTitle="This is a modification of the original Barcadia theme adapted to use
-						WordPress and WooCommerce as the headless sources."
+						WordPress and WooCommerce as headless sources."
 				/>
 				<BasicTextModule
 					title="A super-fast theme that is easy to get started, using the power of
@@ -28,18 +28,20 @@ const Index = () => {
 					linkText="View Products"
 				/>
 				<PerksModule>
-				<Perk
-					title="The Title"
-					content="The content"
-				/>
+					<Perk
+						title="The Title"
+						content="The content"
+					/>
 				</PerksModule>
 				<WooFeatures
-					title="Featured Products from Barcadia."
-					introduction="Vivamus quam mauris, pulvinar vel mauris id, interdum semper neque. Proin malesuada libero eget tellus scelerisque, id egestas tortor egestas."
+					title="Featured Products."
+					introduction="Here's a selection of sizzling products which appear here because
+						they are assigned to the &quot;Featured&quot; category in
+						WooCommerce&#47;WordPress."
 				/>
 				<WPLatestPosts
-					title="The Latest from WordPress"
-					introduction="This section displays the latest 3 posts from WordPress."
+					title="The Latest Blog Posts"
+					introduction="Here are the latest 3 awesome posts from WordPress."
 				/>
 			</Layout>
 		</>

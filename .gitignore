@@ -1,6 +1,5 @@
 .env*
 .directory
-contentful-import-error*
 /.cache
 /node_modules
 /WordPress

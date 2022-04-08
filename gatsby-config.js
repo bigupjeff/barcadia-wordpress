@@ -8,22 +8,27 @@ require("dotenv").config({
 })
 module.exports = {
 	siteMetadata: {
-		title: "Barcadia",
+		title: "Barcadia-WP",
 		description: "A super-fast site using GatsbyJS",
 		author: "Morgan Baker",
-		twitterUsername: "barcadia",
-		facebookUsername: "barcadia",
-		instagramUsername: "barcadia",
-		linkedinUsername: "barcadia",
-		image: "/macbook-color.jpg",
+		twitterUsername: "barcadia-wp",
+		facebookUsername: "barcadia-wp",
+		instagramUsername: "barcadia-wp",
+		linkedinUsername: "barcadia-wp",
+		image: "/wordpress-gatsby.jpg",
 		siteUrl: "https://barcadia.netlify.com",
 		developerName: "Morgan Baker Development",
 		developerUrl: "https://www.morganbaker.dev",
+		secondDeveloperName: "Jefferson Real",
+		secondDeveloperUrl: "https://jeffersonreal.uk/",
 	},
-	/* Your site config here */
 	plugins: [
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-sitemap`,
+		`gatsby-transformer-sharp`,
+		`gatsby-plugin-sharp`,
+		`gatsby-plugin-styled-components`,
+		`gatsby-plugin-image`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -34,8 +39,9 @@ module.exports = {
 		{
 			resolve: `gatsby-source-wordpress`,
 			options: {
-				url: "https://wp-source.bigupweb.uk/graphql",
+				url: process.env.WP_GRAPHQL_ENDPOINT_URL,
 				auth: {
+					// Only required if your WordPress site is behind Basic Auth.
 					htaccess: {
 						username: process.env.HTTPBASICAUTH_USERNAME,
 						password: process.env.HTTPBASICAUTH_PASSWORD,
@@ -44,10 +50,10 @@ module.exports = {
 				verbose: true,
 				searchAndReplace: [
 					{
-						// Regex rule used to search when replacing strings in node data
-						search: "https://wp-source.bigupweb.uk",
-						// Replacement string to use in place of the search string.
-						replace: "https://bigupweb.uk",
+						// This is a regex search and replace rule to find any occurances of the
+						// WordPress source URL and replace it with the URL of the Gatsby site.
+						search: process.env.WP_SOURCE_BASE_URL,
+						replace: process.env.GATSBY_WEBSITE_URL,
 					},
 				],
 				html: {
@@ -73,26 +79,23 @@ module.exports = {
 					  showQueryOnError: true,
 					},
 				},
-				// Default 15 - too many concurrent requests may cause media download failures.
-				schema: {
-					requestConcurrency: 5,
-				},
 			},
 		},
 		{
 			resolve: "@pasdo501/gatsby-source-woocommerce",
 			options: {
-				// Base URL of WordPress site
+				// Base URL of the WordPress site.
 				api: process.env.DOMAIN,
-				// true if using https. false otherwise.
+				// True if using https. false otherwise.
 				https: true,
+				// API keys obtained from the WooCommerce dashboard in WordPress.
 				api_keys: {
 					consumer_key: process.env.WOO_KEY,
 					consumer_secret: process.env.WOO_SECRET,
 				},
-				// Array of strings with fields you'd like to create nodes for...
+				// Array of strings with fields you'd like to create nodes for.
 				fields: ['products'],
-				// OPTIONAL: How many results to retrieve *per request*
+				// OPTIONAL: How many results to retrieve per request.
 				per_page: 100,
 			}
 		},
@@ -104,9 +107,5 @@ module.exports = {
 				policy: [{ userAgent: "*", allow: "/" }],
 			},
 		},
-		`gatsby-transformer-sharp`,  // Needed for dynamic images
-		`gatsby-plugin-sharp`,
-		`gatsby-plugin-styled-components`,
-		`gatsby-plugin-image`,
 	],
 }
