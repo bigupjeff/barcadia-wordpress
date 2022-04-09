@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby"
 
-const useAllBlogPost = () => {
+const useWpAllPosts = () => {
 	const {
 		allWpPost: { nodes },
 	} = useStaticQuery(graphql`
@@ -32,4 +32,4 @@ const useAllBlogPost = () => {
 	`)
 	return nodes
 }
-export default useAllBlogPost
+export default useWpAllPosts
