@@ -2,19 +2,19 @@ import React from "react"
 import { Link } from "gatsby"
 import PostItems from "./PostItems"
 import WpPostItem from "./WpPostItem"
-import useLatestBlogPost from "../../hooks/wp-use-latest-blog-post"
+import useLatestWpPosts from "../../hooks/useWpLatestPosts"
 import Button from "../Button/Button"
 
 /**
- * LatestPosts Section
+ * WpLatestPosts Section
  *
  * @param {string} title (passed in context)
  * @param {string} introduction (passed in context)
  * @returns Latest posts section component.
  *
  */
-const LatestPosts = ({ title, introduction }) => {
-	const latestBlogPost = useLatestBlogPost()
+const WpLatestPosts = ({ title, introduction }) => {
+	const latestBlogPost = useLatestWpPosts()
 	return (
 		<div className="section">
 			<div className="container container__tight">
@@ -43,4 +43,4 @@ const LatestPosts = ({ title, introduction }) => {
 	)
 }
 
-export default LatestPosts
+export default WpLatestPosts

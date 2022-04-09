@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import ProductTemplate from "../../templates/woo-product-template"
+import ProductTemplate from "../../templates/WooProductTemplate"
 import Seo from "../../components/SEO"
 import Layout from "../../components/Layout"
 

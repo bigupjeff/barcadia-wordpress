@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { menuItems } from "../../constants/links"
 import { FooterStyles, FooterMenuStyles, CopyrightStyles } from "./FooterStyles"
-import useAllProduct from "../../hooks/use-all-woo-product"
+import useAllProduct from "../../hooks/useWooAllProducts"
 import { UseSiteMetadata } from "../../hooks/useSiteMetadata"
 import {
 	FaFacebookSquare as Facebook,

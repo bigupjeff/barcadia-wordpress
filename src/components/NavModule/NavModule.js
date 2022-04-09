@@ -3,8 +3,8 @@ import { Link } from "gatsby"
 import MenuContext from "../MenuContext"
 import { motion } from "framer-motion"
 import { menuItems } from "./NavConstants"
-import { UseWpSiteMetadata } from "../../hooks/use-wp-site-metadata"
-import useFeaturedProduct from "../../hooks/use-featured-woo-product"
+import { useWpSiteMetadata } from "../../hooks/useWpSiteMetadata"
+import useFeaturedProduct from "../../hooks/useWooFeaturedProducts"
 import { FiChevronDown as Chevron } from "react-icons/fi"
 import {
 	NavModuleStyles,
@@ -31,7 +31,7 @@ const NavModule = () => {
 	const toggleSubNav = () => {
 		setSubNav((subNavIsOpen) => !subNavIsOpen)
 	}
-	const { generalSettingsTitle } = UseWpSiteMetadata()
+	const { generalSettingsTitle } = useWpSiteMetadata()
 	return (
 		<NavModuleStyles>
 			<div className="nav">

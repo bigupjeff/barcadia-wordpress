@@ -5,7 +5,7 @@ import BannerModule from "../components/BannerModule/BannerModule"
 import BasicTextModule from "../components/BasicTextModule/BasicTextModule"
 import PerksModule from "../components/PerksModule/PerksModule"
 import Perk from "../components/PerksModule/Perk"
-import WooFeatures from "../components/Features/WooFeatures"
+import WooFeaturedProducts from "../components/Features/WooFeaturedProducts"
 import WpLatestPosts from "../components/Post/WpLatestPosts"
 
 const Index = () => {
@@ -30,7 +30,7 @@ const Index = () => {
 				<PerksModule>
 					<Perk title="The Title" content="The content" />
 				</PerksModule>
-				<WooFeatures
+				<WooFeaturedProducts
 					title="Featured Products."
 					introduction='Here&apos;s a selection of sizzling products which appear here because
 						they are assigned to the "Featured" category in

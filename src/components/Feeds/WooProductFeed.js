@@ -1,6 +1,6 @@
 import React from "react"
 import WooFeaturedProduct from "../Features/WooFeaturedProduct"
-import useAllWooProduct from "../../hooks/use-all-woo-product"
+import useAllWooProduct from "../../hooks/useWooAllProducts"
 
 const ProductFeed = () => {
 	const allProduct = useAllWooProduct()

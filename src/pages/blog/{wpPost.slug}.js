@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import WpPostTemplate from "../../templates/wp-post-template"
+import WpPostTemplate from "../../templates/WpPostTemplate"
 import Seo from "../../components/SEO"
 import Layout from "../../components/Layout"
 

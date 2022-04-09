@@ -2,11 +2,11 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { FeaturedProductsStyles } from "./FeaturesStyles"
 import WooFeaturedProduct from "./WooFeaturedProduct"
-import useFeaturedWooProduct from "../../hooks/use-featured-woo-product"
+import useWooFeaturedProducts from "../../hooks/useWooFeaturedProducts"
 import Button from "../Button/Button"
 
-const Features = ({ title, introduction }) => {
-	const featuredProduct = useFeaturedWooProduct()
+const WooFeaturedProducts = ({ title, introduction }) => {
+	const featuredProduct = useWooFeaturedProducts()
 
 	return (
 		<FeaturedProductsStyles className="section">
@@ -30,4 +30,4 @@ const Features = ({ title, introduction }) => {
 	)
 }
 
-export default Features
+export default WooFeaturedProducts

@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import DefaultTemplate from "../templates/wp-default-template"
-import FeedTemplate from "../templates/wp-feed-template"
+import DefaultTemplate from "../templates/WpDefaultTemplate"
+import FeedTemplate from "../templates/WpFeedTemplate"
 
 const getPageTemplate = (wpPage) => {
 	const templateName = wpPage.template.templateName

@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const UseWpSiteMetadata = () => {
+export const useWpSiteMetadata = () => {
 	const { wp } = useStaticQuery(
 		graphql`
 			query WpSiteMetadataQuery {
@@ -15,4 +15,4 @@ export const UseWpSiteMetadata = () => {
 	)
 	return wp.allSettings
 }
-export default UseWpSiteMetadata
+export default useWpSiteMetadata

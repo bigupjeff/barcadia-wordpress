@@ -4,7 +4,7 @@ import Button from "../Button/Button"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { FeaturedProductStyles } from "./FeaturesStyles"
 
-const FeaturedProduct = ({ feature }) => {
+const WooFeaturedProduct = ({ feature }) => {
 	const { slug, headerImage, name, short_description } = feature
 	const gatsbyPath = `/products/` + slug
 	const image = headerImage
@@ -37,4 +37,4 @@ const FeaturedProduct = ({ feature }) => {
 	)
 }
 
-export default FeaturedProduct
+export default WooFeaturedProduct

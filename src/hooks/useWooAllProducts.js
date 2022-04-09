@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby"
 
-const useAllWooProduct = () => {
+const useWooAllProducts = () => {
 	const {
 		allWcProducts: { nodes },
 	} = useStaticQuery(graphql`
@@ -33,4 +33,4 @@ const useAllWooProduct = () => {
 	return nodes
 }
 
-export default useAllWooProduct
+export default useWooAllProducts
