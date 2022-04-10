@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import PropTypes from "prop-types"
 
 const getData = graphql`
 	query {
@@ -46,6 +47,11 @@ const SEO = ({ title, description }) => {
 			<meta name="twitter:image" content={`${siteUrl}${image}`} />
 		</Helmet>
 	)
+}
+
+SEO.propTypes = {
+	title: PropTypes.string,
+	description: PropTypes.string,
 }
 
 export default SEO

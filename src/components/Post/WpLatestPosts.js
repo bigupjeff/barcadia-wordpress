@@ -4,6 +4,7 @@ import PostItems from "./PostItems"
 import WpPostItem from "./WpPostItem"
 import useLatestWpPosts from "../../hooks/useWpLatestPosts"
 import Button from "../Button/Button"
+import PropTypes from "prop-types"
 
 /**
  * WpLatestPosts Section
@@ -41,6 +42,11 @@ const WpLatestPosts = ({ title, introduction }) => {
 			</div>
 		</div>
 	)
+}
+
+WpLatestPosts.propTypes = {
+	title: PropTypes.string,
+	introduction: PropTypes.string,
 }
 
 export default WpLatestPosts

@@ -1,7 +1,7 @@
 import * as React from "react"
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
-import BannerModule from "../components/BannerModule/BannerModule"
+import WooBannerModule from "../components/BannerModule/WooBannerModule"
 import BasicTextModule from "../components/BasicTextModule/BasicTextModule"
 import PerksModule from "../components/PerksModule/PerksModule"
 import Perk from "../components/PerksModule/Perk"
@@ -13,7 +13,7 @@ const Index = () => {
 		<>
 			<Seo title="Home" />
 			<Layout>
-				<BannerModule
+				<WooBannerModule
 					title="Welcome to Barcadia-WP"
 					subTitle="This is a modification of the original Barcadia theme adapted to use
 						WordPress and WooCommerce as headless sources."

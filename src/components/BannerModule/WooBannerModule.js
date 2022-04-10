@@ -3,8 +3,9 @@ import { Link, navigate } from "gatsby"
 import { BannerModuleStyles } from "./BannerModuleStyles"
 import { StaticImage } from "gatsby-plugin-image"
 import Button from "../Button/Button"
+import PropTypes from 'prop-types'
 
-const BannerModule = ({ children, title, subTitle, price, enquire }) => {
+const WooBannerModule = ({ children, title, subTitle, price, enquire }) => {
 	function scrollToArea() {
 		navigate("#topContent")
 	}
@@ -68,4 +69,12 @@ const BannerModule = ({ children, title, subTitle, price, enquire }) => {
 	)
 }
 
-export default BannerModule
+WooBannerModule.propTypes = {
+	children: PropTypes.node,
+	title: PropTypes.string,
+	subTitle: PropTypes.string,
+	price: PropTypes.string,
+	enquire: PropTypes.bool,
+}
+
+export default WooBannerModule

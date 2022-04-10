@@ -1,5 +1,6 @@
 import * as React from "react"
 import { PerkStyles } from "./PerksModuleStyles"
+import PropTypes from "prop-types"
 
 const Perk = ({ children, title, content }) => {
 	return (
@@ -9,6 +10,12 @@ const Perk = ({ children, title, content }) => {
 			{content && <p>{content}</p>}
 		</PerkStyles>
 	)
+}
+
+Perk.propTypes = {
+	children: PropTypes.node.isRequired,
+	title: PropTypes.string,
+	content: PropTypes.string,
 }
 
 export default Perk

@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import ProductTemplate from "../../templates/WooProductTemplate"
 import Seo from "../../components/SEO"
 import Layout from "../../components/Layout"
+import PropTypes from "prop-types"
 
 const Product = ({ data: { wcProducts } }) => {
 	return (
@@ -13,6 +14,10 @@ const Product = ({ data: { wcProducts } }) => {
 			</Layout>
 		</>
 	)
+}
+
+Product.propTypes = {
+	data: PropTypes.object.isRequired,
 }
 
 /*

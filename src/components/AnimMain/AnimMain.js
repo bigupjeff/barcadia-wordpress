@@ -1,10 +1,10 @@
 import React, { useContext } from "react"
 import MenuContext from "../MenuContext"
 import { motion } from "framer-motion"
+import PropTypes from 'prop-types';
 
 const AnimMain = ({ children }) => {
 	const [isOpen] = useContext(MenuContext)
-
 	const siteBody = {
 		open: {
 			x: "var(--menuWidth)",
@@ -13,7 +13,6 @@ const AnimMain = ({ children }) => {
 			x: 0,
 		},
 	}
-
 	return (
 		<motion.div
 			initial="closed"
@@ -28,6 +27,10 @@ const AnimMain = ({ children }) => {
 			{children}
 		</motion.div>
 	)
+}
+
+AnimMain.propTypes = {
+	children: PropTypes.node.isRequired,
 }
 
 export default AnimMain

@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import WpPostTemplate from "../../templates/WpPostTemplate"
 import Seo from "../../components/SEO"
 import Layout from "../../components/Layout"
+import PropTypes from "prop-types"
 
 const WpPost = ({ data: { wpPost } }) => {
 	return (
@@ -13,6 +14,10 @@ const WpPost = ({ data: { wpPost } }) => {
 			</Layout>
 		</>
 	)
+}
+
+WpPost.propTypes = {
+	data: PropTypes.object.isRequired,
 }
 
 export const data = graphql`

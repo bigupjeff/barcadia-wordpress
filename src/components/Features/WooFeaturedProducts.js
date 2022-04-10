@@ -4,6 +4,7 @@ import { FeaturedProductsStyles } from "./FeaturesStyles"
 import WooFeaturedProduct from "./WooFeaturedProduct"
 import useWooFeaturedProducts from "../../hooks/useWooFeaturedProducts"
 import Button from "../Button/Button"
+import PropTypes from "prop-types"
 
 const WooFeaturedProducts = ({ title, introduction }) => {
 	const featuredProduct = useWooFeaturedProducts()
@@ -28,6 +29,11 @@ const WooFeaturedProducts = ({ title, introduction }) => {
 			</div>
 		</FeaturedProductsStyles>
 	)
+}
+
+WooFeaturedProducts.propTypes = {
+	title: PropTypes.string,
+	introduction: PropTypes.string,
 }
 
 export default WooFeaturedProducts

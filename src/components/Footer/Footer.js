@@ -13,7 +13,6 @@ import {
 
 const Footer = () => {
 	const allProduct = useAllProduct()
-	console.log(allProduct)
 	const siteMeta = UseSiteMetadata()
 	return (
 		<FooterStyles style={{ marginBottom: 0 }} className="section">

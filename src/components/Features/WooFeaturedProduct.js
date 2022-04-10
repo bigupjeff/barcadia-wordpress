@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import Button from "../Button/Button"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { FeaturedProductStyles } from "./FeaturesStyles"
+import PropTypes from 'prop-types'
 
 const WooFeaturedProduct = ({ feature }) => {
 	const { slug, headerImage, name, short_description } = feature
@@ -35,6 +36,10 @@ const WooFeaturedProduct = ({ feature }) => {
 			</Link>
 		</FeaturedProductStyles>
 	)
+}
+
+WooFeaturedProduct.propTypes = {
+	feature: PropTypes.object
 }
 
 export default WooFeaturedProduct

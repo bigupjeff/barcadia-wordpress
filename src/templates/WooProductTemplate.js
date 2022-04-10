@@ -2,7 +2,7 @@ import React from "react"
 import Seo from "../components/SEO"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import BannerModule from "../components/BannerModule/WooBannerModule"
+import WooBannerModule from "../components/BannerModule/WooBannerModule"
 import Faq from "../components/Faq/WooFaq"
 import Features from "../components/Features/WooFeaturedProducts"
 
@@ -84,7 +84,7 @@ const ProductTemplate = (wcProducts) => {
 	return (
 		<>
 			<Seo title={name} />
-			<BannerModule
+			<WooBannerModule
 				title={name}
 				price={price}
 				subTitle={short_description}
@@ -95,7 +95,7 @@ const ProductTemplate = (wcProducts) => {
 					image={productHeaderImage}
 					alt={headerImageAltText || name}
 				/>
-			</BannerModule>
+			</WooBannerModule>
 			<ProductTemplateStyles className="section">
 				<div className="container container__tight">
 					{description && (
