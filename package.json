@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby clean && gatsby develop",
     "format": "prettier --write \"src/**/*.{js,jsx,json,ts,tsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx,json,ts,tsx}\"",
     "start": "gatsby develop",

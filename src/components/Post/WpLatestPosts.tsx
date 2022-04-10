@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import PostItems from "./PostItems"
 import WpPostItem from "./WpPostItem"
-import useLatestWpPosts from "../../hooks/useWpLatestPosts"
+import useWpLatestPosts from "../../hooks/useWpLatestPosts"
 import Button from "../Button/Button"
 
 interface WpLatestPostsProps {
@@ -11,7 +11,7 @@ interface WpLatestPostsProps {
 }
 
 const WpLatestPosts = ({ title, introduction }: WpLatestPostsProps) => {
-	const latestBlogPost = useLatestWpPosts()
+	const WpLatestPosts = useWpLatestPosts()
 	return (
 		<div className="section">
 			<div className="container container__tight">
@@ -28,7 +28,7 @@ const WpLatestPosts = ({ title, introduction }: WpLatestPostsProps) => {
 				) : null}
 
 				<PostItems>
-					{latestBlogPost.map((node, index) => {
+					{WpLatestPosts.map((node, index) => {
 						return <WpPostItem key={index} node={node} />
 					})}
 				</PostItems>
