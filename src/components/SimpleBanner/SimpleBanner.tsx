@@ -1,8 +1,13 @@
 import * as React from "react"
 import { SimpleBannerStyles } from "./SimpleBannerStyles"
-import PropTypes from "prop-types"
 
-const SimpleBanner = ({ children, title, content }) => {
+interface SimpleBannerProps {
+	children?: React.ReactNode
+	title?: string
+	content?: string
+}
+
+const SimpleBanner = ({ children, title, content }: SimpleBannerProps) => {
 	return (
 		<SimpleBannerStyles>
 			{children}
@@ -25,12 +30,6 @@ const SimpleBanner = ({ children, title, content }) => {
 			<div className="gradient"></div>
 		</SimpleBannerStyles>
 	)
-}
-
-SimpleBanner.propTypes = {
-	children: PropTypes.node,
-	title: PropTypes.string,
-	content: PropTypes.string,
 }
 
 export default SimpleBanner

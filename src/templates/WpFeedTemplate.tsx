@@ -17,14 +17,6 @@ const getFeedTemplate = (wpPage) => {
 	}
 }
 
-/**
- * Feed Page Component
- *
- * The data from the page query is passed to the component as data.wpPage. We're destructuring the
- * data object, then using it in our markup.
- *
- */
-
 const FeedTemplate = (wpPage) => {
 	const { title, content, featuredImage } = wpPage
 	const headerImage = featuredImage

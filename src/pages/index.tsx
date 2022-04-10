@@ -16,14 +16,14 @@ const Index = () => {
 				<WooBannerModule
 					title="Welcome to Barcadia-WP"
 					subTitle="This is a modification of the original Barcadia theme adapted to use
-						WordPress and WooCommerce as headless sources."
+                        WordPress and WooCommerce as headless sources."
 				/>
 				<BasicTextModule
 					title="A super-fast theme that is easy to get started, using the power of
-						GatsbyJS"
+                        GatsbyJS"
 					content="Using modern CSS properties such as grid, this theme is optmised for
-						speed and mobile devices. Giving users an excellent experience on
-						any device. Future-proofing your product."
+                        speed and mobile devices. Giving users an excellent experience on
+                        any device. Future-proofing your product."
 					link="/products"
 					linkText="View Products"
 				/>
@@ -33,8 +33,8 @@ const Index = () => {
 				<WooFeaturedProducts
 					title="Featured Products."
 					introduction='Here&apos;s a selection of sizzling products which appear here because
-						they are assigned to the "Featured" category in
-						WooCommerce&#47;WordPress.'
+                        they are assigned to the "Featured" category in
+                        WooCommerce&#47;WordPress.'
 				/>
 				<WpLatestPosts
 					title="The Latest Blog Posts"

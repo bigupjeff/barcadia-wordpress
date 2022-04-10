@@ -2,9 +2,12 @@ import * as React from "react"
 import Button from "../Button/Button"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { PostItemStyles } from "./PostStyles"
-import PropTypes from "prop-types"
 
-const WpPostItem = ({ node }, key) => {
+interface WpPostItemProps {
+	node?: object
+}
+
+const WpPostItem = ({ node }: WpPostItemProps, key) => {
 	const { title, slug, excerpt, date, featuredImage } = node
 	const uri = `/blog/` + slug
 	const image = featuredImage
@@ -32,10 +35,6 @@ const WpPostItem = ({ node }, key) => {
 			</div>
 		</PostItemStyles>
 	)
-}
-
-WpPostItem.propTypes = {
-	node: PropTypes.object,
 }
 
 export default WpPostItem

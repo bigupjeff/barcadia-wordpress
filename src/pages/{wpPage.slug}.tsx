@@ -2,9 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 import DefaultTemplate from "../templates/WpDefaultTemplate"
 import FeedTemplate from "../templates/WpFeedTemplate"
-import PropTypes from "prop-types"
 
-const getPageTemplate = (wpPage) => {
+interface getPageTemplateProps {
+	wpPage: object
+}
+
+const getPageTemplate = (wpPage: getPageTemplateProps) => {
 	const templateName = wpPage.template.templateName
 	switch (templateName) {
 		case "Feed":
@@ -15,16 +18,12 @@ const getPageTemplate = (wpPage) => {
 	}
 }
 
-getPageTemplate.propTypes = {
-	wpPage: PropTypes.object.isRequired,
+interface PageProps {
+	data: object
 }
 
-const Page = ({ data: { wpPage } }) => {
+const Page = ({ data: { wpPage } }: PageProps) => {
 	return <main>{getPageTemplate(wpPage)}</main>
-}
-
-Page.propTypes = {
-	data: PropTypes.object.isRequired,
 }
 
 export const data = graphql`

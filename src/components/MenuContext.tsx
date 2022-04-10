@@ -1,10 +1,13 @@
 import React, { useState } from "react"
-import PropTypes from "prop-types"
 
 // Create the context
 const MenuContext = React.createContext()
 
-export function MenuProvider({ children }) {
+interface MenuProviderProps {
+	children: React.ReactNode
+}
+
+export function MenuProvider({ children }: MenuProviderProps) {
 	// Place state in here
 	const [isOpen, setNav] = useState([])
 
@@ -13,10 +16,6 @@ export function MenuProvider({ children }) {
 			{children}
 		</MenuContext.Provider>
 	)
-}
-
-MenuProvider.propTypes = {
-	children: PropTypes.node.isRequired,
 }
 
 export default MenuContext

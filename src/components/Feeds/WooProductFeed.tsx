@@ -1,13 +1,13 @@
 import React from "react"
 import WooFeaturedProduct from "../Features/WooFeaturedProduct"
-import useAllWooProduct from "../../hooks/useWooAllProducts"
+import useWooAllProducts from "../../hooks/useWooAllProducts"
 
-const ProductFeed = () => {
-	const allProduct = useAllWooProduct()
+const WooProductFeed = () => {
+	const allProduct = useWooAllProducts()
 
 	return allProduct.map((node, index) => {
 		return <WooFeaturedProduct key={index} feature={node} />
 	})
 }
 
-export default ProductFeed
+export default WooProductFeed

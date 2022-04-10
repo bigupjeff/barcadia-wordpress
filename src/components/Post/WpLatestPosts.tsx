@@ -4,17 +4,13 @@ import PostItems from "./PostItems"
 import WpPostItem from "./WpPostItem"
 import useLatestWpPosts from "../../hooks/useWpLatestPosts"
 import Button from "../Button/Button"
-import PropTypes from "prop-types"
 
-/**
- * WpLatestPosts Section
- *
- * @param {string} title (passed in context)
- * @param {string} introduction (passed in context)
- * @returns Latest posts section component.
- *
- */
-const WpLatestPosts = ({ title, introduction }) => {
+interface WpLatestPostsProps {
+	title?: string
+	introduction?: string
+}
+
+const WpLatestPosts = ({ title, introduction }: WpLatestPostsProps) => {
 	const latestBlogPost = useLatestWpPosts()
 	return (
 		<div className="section">
@@ -42,11 +38,6 @@ const WpLatestPosts = ({ title, introduction }) => {
 			</div>
 		</div>
 	)
-}
-
-WpLatestPosts.propTypes = {
-	title: PropTypes.string,
-	introduction: PropTypes.string,
 }
 
 export default WpLatestPosts

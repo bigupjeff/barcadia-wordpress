@@ -33,7 +33,7 @@ const PerksModule = () => {
 				<Perk
 					title="Built For Content"
 					content="The power and familiarity of WordPress, coupled with the product management of
-		  	WooCommerce"
+            WooCommerce"
 				>
 					<StaticImage
 						src="../../../static/logos/woo-press-logo.svg"

@@ -4,9 +4,12 @@ import AnimMain from "./AnimMain/AnimMain"
 import Footer from "./Footer/Footer"
 import { motion } from "framer-motion"
 import { GlobalStyle } from "../styles/GlobalStyles"
-import PropTypes from "prop-types"
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+	children: React.ReactNode
+}
+
+const Layout = ({ children }: LayoutProps) => {
 	return (
 		<>
 			<GlobalStyle />
@@ -24,10 +27,6 @@ const Layout = ({ children }) => {
 			</motion.div>
 		</>
 	)
-}
-
-Layout.propTypes = {
-	children: PropTypes.node.isRequired,
 }
 
 export default Layout

@@ -123,10 +123,10 @@ const ProductTemplate = (wcProducts) => {
 				<ProductGallery className="section">
 					<div className="container container__tight">
 						{images.map((item, index) => {
-							let galleryImage = getImage(
+							const galleryImage = getImage(
 								item.localFile.childImageSharp
 							)
-							let galleryAltText = item.alt
+							const galleryAltText = item.alt
 							return (
 								<GatsbyImage
 									key={index}

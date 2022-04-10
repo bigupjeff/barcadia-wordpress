@@ -2,9 +2,13 @@ import React, { useState } from "react"
 import { FaqStyles } from "./FaqStyles"
 import { MdExpandMore as Chevron } from "react-icons/md"
 import { motion } from "framer-motion"
-import PropTypes from 'prop-types'
 
-const Faq = ({ title, description }) => {
+interface FaqProps {
+	title?: string
+	description?: string
+}
+
+const Faq = ({ title, description }: FaqProps) => {
 	const [showInfo, setInfo] = useState(false)
 
 	const faqVariants = {
@@ -40,11 +44,6 @@ const Faq = ({ title, description }) => {
 			)}
 		</FaqStyles>
 	)
-}
-
-Faq.propTypes = {
-	title: PropTypes.string,
-	description: PropTypes.string,
 }
 
 export default Faq

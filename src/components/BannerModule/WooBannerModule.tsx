@@ -3,9 +3,22 @@ import { Link, navigate } from "gatsby"
 import { BannerModuleStyles } from "./BannerModuleStyles"
 import { StaticImage } from "gatsby-plugin-image"
 import Button from "../Button/Button"
-import PropTypes from 'prop-types'
 
-const WooBannerModule = ({ children, title, subTitle, price, enquire }) => {
+interface WooBannerModuleProps {
+	children?: React.ReactNode
+	title?: string
+	subTitle?: string
+	price?: string
+	enquire?: boolean
+}
+
+const WooBannerModule = ({
+	children,
+	title,
+	subTitle,
+	price,
+	enquire,
+}: WooBannerModuleProps) => {
 	function scrollToArea() {
 		navigate("#topContent")
 	}
@@ -67,14 +80,6 @@ const WooBannerModule = ({ children, title, subTitle, price, enquire }) => {
 			<span id="topContent"></span>
 		</>
 	)
-}
-
-WooBannerModule.propTypes = {
-	children: PropTypes.node,
-	title: PropTypes.string,
-	subTitle: PropTypes.string,
-	price: PropTypes.string,
-	enquire: PropTypes.bool,
 }
 
 export default WooBannerModule
