@@ -14,6 +14,10 @@ const WpPostItem = ({ node }: WpPostItemProps, key) => {
 		? getImage(featuredImage.node.localFile.childImageSharp)
 		: null
 	const altText = featuredImage ? featuredImage.node.altText : ""
+
+
+console.log('alt: ' + altText);
+
 	return (
 		<PostItemStyles key={key} to={uri}>
 			{featuredImage && (

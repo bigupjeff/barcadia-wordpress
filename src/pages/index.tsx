@@ -16,7 +16,7 @@ const Index = () => {
 				<WooBannerModule
 					title="Welcome to Barcadia-WP"
 					subTitle="This is a modification of the original Barcadia theme adapted to use
-                        WordPress and WooCommerce as headless sources."
+                        WordPress and WooCommerce as a headless source."
 				/>
 				<BasicTextModule
 					title="A super-fast theme that is easy to get started, using the power of

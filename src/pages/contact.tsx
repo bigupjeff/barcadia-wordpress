@@ -13,7 +13,7 @@ const contact = () => {
 				<SimpleBanner title="Get in touch">
 					<StaticImage
 						className="banner__image"
-						src="../../static/wordpress-gatsby-letterbox.jpg"
+						src="../../static/wordpress-gatsby-letterbox.webp"
 						alt="WordPress Wapuu holding the Gatsby Logo."
 					/>
 				</SimpleBanner>

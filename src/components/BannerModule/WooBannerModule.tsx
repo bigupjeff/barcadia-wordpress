@@ -32,7 +32,7 @@ const WooBannerModule = ({
 					<StaticImage
 						className="banner__image"
 						imgClassName="banner__image--content"
-						src="../../../static/wordpress-gatsby.jpg"
+						src="../../../static/wordpress-gatsby.webp"
 						alt="Banner Image"
 						layout="fullWidth"
 						placeholder="blurred"
