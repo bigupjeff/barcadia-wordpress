@@ -15,8 +15,7 @@ const WpPostItem = ({ node }: WpPostItemProps, key) => {
 		: null
 	const altText = featuredImage ? featuredImage.node.altText : ""
 
-
-console.log('alt: ' + altText);
+	console.log("alt: " + altText)
 
 	return (
 		<PostItemStyles key={key} to={uri}>
