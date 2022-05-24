@@ -62,7 +62,7 @@ Both are also passed as variables to the component’s GraphQL query, so you can
 This means you don't need to worry about querying all posts/pages before passing to a page template.
 
 
-##### Props to the OG dev here:
+##### Props to the OG Barcadia dev here:
 
 [Barcadia OG Repo](https://github.com/bagseye/barcadia)
 
